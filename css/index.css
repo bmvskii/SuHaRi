@@ -1,0 +1,28 @@
+.photo {
+    width: 100px;
+}
+
+aside.mainaside {
+    border-radius: 10px;
+}
+
+.statistics {
+    font-size: 10px;
+}
+
+.student div {
+    flex: 0 0 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.hrtxt {
+    font-size: 13px;
+}
+
+.index {
+    display: flex;
+    flex-direction: column;
+}
