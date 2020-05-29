@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const QAbutton = document.querySelector('.button--qa');
-    const JSbutton = document.querySelector('.button--js');
-    const JavaButton = document.querySelector('.button--java');
-    const PythonButton = document.querySelector('.button--python');
-
     const createStd = (stdData) => {
         const {id, fio, date, photo} = stdData;
         const std = document.createElement('div');
@@ -19,11 +13,67 @@ document.addEventListener('DOMContentLoaded', () => {
                  <span class="student__data">Дата сдачи:</span>
                  <span class="student__value">${date}</span>
              </div>
-             <button class="button">Подробнее</button>
+            
+             <button class="button" data-toggle="modal" data-target="#studentModal">Подробнее</button>
        `;
 
         return std;
     };
+
+    $('#studentModal').on('shown.bs.modal', function (e) {
+        const studentId = e.relatedTarget
+            .closest('.student')
+            .querySelector('.student__value')
+            .textContent;
+
+        fetch(`http://goiteens.club/hse/back/students.php?id=${studentId}`)
+            .then(data => data.json())
+            .then(data => {
+                const {date, email, fio, school, id, cv, sertificate, competitions, tel } = data;
+                const modalTitle = document.querySelector('#studentModal .modal-title');
+                const tableBody = document.querySelector('#studentModal .table-body');
+
+                const itschoolElem = document.querySelector('#studentModal .it-school .student-info-value');
+                const phoneElem = document.querySelector('#studentModal .phone .student-info-value');
+                const emailElem = document.querySelector('#studentModal .email .student-info-value');
+                const idElem = document.querySelector('#studentModal .id .student-info-value');
+                const cvElem = document.querySelector('#studentModal .cv');
+                const sertificateElem = document.querySelector('#studentModal .sertificate');
+
+                idElem.textContent = id || 'Отсутствует';
+                emailElem.textContent = email || "Отсутствует";
+                phoneElem.textContent = tel || "Отсутствует";
+                itschoolElem.textContent = school || "Отсутствует";
+
+                if (cv) {
+                    cvElem.href = cv;
+                    cvElem.innerHTML = 'Открыть';
+                } else {
+                    cvElem.href = '#';
+                    cvElem.innerHTML = 'Отсутствует';
+                }
+
+                if (sertificate) {
+                    sertificateElem.href = sertificate;
+                    sertificateElem.innerHTML = 'Открыть';
+                } else {
+                    sertificateElem.href = '#';
+                    sertificateElem.innerHTML = 'Отсутствует';
+                }
+
+                let competitionsRow = '';
+                for (const comp of competitions) {
+                    competitionsRow += `<td class="table-data">${comp}</td>`
+                }
+
+                tableBody.innerHTML = `<tr class="table-row">
+                    ${competitionsRow}
+                    <td class="table-data">${date}</td>
+                </tr>`
+
+                modalTitle.innerHTML = fio;
+            });
+    });
 
     const handleButtonClick = (type = 'all') => {
         fetch('http://goiteens.club/hse/back/students.php')
@@ -48,17 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
     };
-    const handleJSButtonClick = () => handleButtonClick('js');
-    const handleQAButtonClick = () => handleButtonClick('qa');
-    const handlePythonButtonClick = () => handleButtonClick('python');
-    const handleJavaButtonClick = () => handleButtonClick('java');
-
     const getAllStudents = () => handleButtonClick('all');
 
     getAllStudents();
-
-    JavaButton.addEventListener('click', handleJavaButtonClick);
-    QAbutton.addEventListener('click', handleQAButtonClick);
-    JSbutton.addEventListener('click', handleJSButtonClick);
-    PythonButton.addEventListener('click', handlePythonButtonClick)
 });

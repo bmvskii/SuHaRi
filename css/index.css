@@ -55,6 +55,32 @@ body {
     overflow-x: hidden;
 }
 
+.search-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.search-label {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-label .search-form {
+    border: 1px solid var(--black);
+    padding: 15px 20px;
+    margin-top: 1rem;
+}
+
+.search-label .search-form:hover {
+    border: 1px solid var(--yellow);
+}
+
+.search-label .search-form:focus {
+    border: 1px solid var(--red);
+}
+
 .header {
     display: flex;
     justify-content: center;
