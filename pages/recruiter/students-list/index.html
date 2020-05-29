@@ -5,101 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../css/index.css">
 </head>
 
 <body>
+<header class="header">
+    <h2 class="header__logo">HSE.Project</h2>
+</header>
+<input type="checkbox" id="menu-toggle"/>
+<label id="trigger" for="menu-toggle"></label>
+<label id="burger" for="menu-toggle"></label>
+<ul id="menu">
+    <li><a href="../students-list/index.html">Мои студенты</a></li>
+    <li><a href="../students-search/index.html">Результаты студентов</a></li>
+</ul>
 <div class="container">
     <div class="row">
-        <aside class="col-xl-4 border mainaside">
-            <div class="m-3">
-                <div class="row">
-                    <div class="col-5"> <img src="./img/man.png" alt="" class="photo rounded-circle border"></div>
-                    <div class="d-flex flex-column justify-content-center text-center border col-7 ">
-                        <div><a href="">Фамилия Имя</a></div>
-                        <div><a href="">lastname@gmail.com</a></div>
-                    </div>
-                </div>
-
-                <a href="http://google.com" class="elem button btn btn-outline-primary col-12 mt-3">Профиль</a>
-
-                <a href="http://google.com" class="elem button btn btn-outline-primary col-12 mt-3">Мои студенты</a>
-                <h4 class="text-center mt-3">Подобрать студента</h4>
-                <a href="#" class="elem button btn btn-outline-secondary col-12 mt-3">QA</a>
-                <a href="#" class="elem button btn btn-outline-secondary col-12 mt-3">JS</a>
-                <a href="#" class="elem button btn btn-outline-secondary col-12 mt-3">Java</a>
-                <a href="#" class="elem button btn btn-outline-secondary col-12 mt-3">Python</a>
-
-            </div>
+        <aside class="col-xl-2 aside">
+            <h2 class="title">Techs</h2>
+            <ul class="aside-list">
+                <li class="aside-list-item">
+                    <button class="button button--qa">QA</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--js">JavaScript</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--python">Python</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--java">Java</button>
+                </li>
+            </ul>
         </aside>
-        <main class="col-xl-8 ">
-            <div class=" d-flex justify-content-between statistics">
-                <div class="border col-2 text-center text-monospace">Статистика</div>
-                <div class="border col-2 text-center text-monospace">Осталось: <br> 7</div>
-                <div class="border col-2 text-center text-monospace">Стажировка:<br>  0</div>
-                <div class="border col-2 text-center text-monospace">Нанято: <br> 0</div>
-                <div class="border col-2 text-center text-monospace">Баланс: <br> 300 грн.</div>
-            </div>
-            <h1 class="text-center">Мои студенты</h1>
+        <div class="col-1"></div>
+        <main class="col-xl-9 main">
+<!--            <div class=" d-flex justify-content-between statistics">-->
+<!--                <div class="border col-2 text-center text-monospace">Статистика</div>-->
+<!--                <div class="border col-2 text-center text-monospace">Осталось: <br> 7</div>-->
+<!--                <div class="border col-2 text-center text-monospace">Стажировка:<br>  0</div>-->
+<!--                <div class="border col-2 text-center text-monospace">Нанято: <br> 0</div>-->
+<!--                <div class="border col-2 text-center text-monospace">Баланс: <br> 300 грн.</div>-->
+<!--            </div>-->
+            <h1 class="title">Мои студенты</h1>
             <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10 d-flex justify-content-center statistics">
-                    <button class="btn btn-outline-secondary col-3">Интерес</button>
-                    <button class="btn btn-outline-secondary col-3">Собеседование</button>
-                    <button class="btn btn-outline-secondary col-3">Стажировка</button>
-                    <button class="btn btn-outline-secondary col-3">Найм</button>
-
+                <div class="col-12 d-flex justify-content-center tabs">
+                    <button class="button tab tab--interest">Интерес</button>
+                    <button class="button tab tab--interview">Собеседование</button>
+                    <button class="button tab tab--trial-period">Стажировка</button>
+                    <button class="button tab tab--hire ">Найм</button>
                 </div>
-                <div class="col-1"></div>
             </div>
 
-            <div class = "row mt-3">
-                <div class="student col-3 border d-flex flex-column  align-items-center mt-2 rounded">
-                    <div class="col-10 border text-center">ID</div>
-                    <div class="col-10 border text-center mt-2">ФИО</div>
-                    <div class="col-10 border text-center mt-2">20.02.20</div>
-                    <div class="col-12  text-right mt-2">
-                        <button class = "btn border btn-outline-dark btn-sm">Подробнее</button>
-                    </div>
-                </div>
-
-                <div class="student col-3 border d-flex flex-column  align-items-center mt-2 rounded">
-                    <div class="col-10 border text-center">ID</div>
-                    <div class="col-10 border text-center mt-2">ФИО</div>
-                    <div class="col-10 border text-center mt-2">20.02.20</div>
-                    <div class="col-12  text-right mt-2">
-                        <button class = "btn border btn-outline-dark btn-sm">Подробнее</button>
-                    </div>
-                </div>
-
-                <div class="student col-3 border d-flex flex-column  align-items-center mt-2 rounded">
-                    <div class="col-10 border text-center">ID</div>
-                    <div class="col-10 border text-center mt-2">ФИО</div>
-                    <div class="col-10 border text-center mt-2">20.02.20</div>
-                    <div class="col-12  text-right mt-2">
-                        <button class = "btn border btn-outline-dark btn-sm">Подробнее</button>
-                    </div>
-                </div>
-
-                <div class="student col-3 border d-flex flex-column  align-items-center mt-2 rounded">
-                    <div class="col-10 border text-center">ID</div>
-                    <div class="col-10 border text-center mt-2">ФИО</div>
-                    <div class="col-10 border text-center mt-2">20.02.20</div>
-                    <div class="col-12  text-right mt-2">
-                        <button class = "btn border btn-outline-dark btn-sm">Подробнее</button>
-                    </div>
-                </div>
-
-                <div class="student col-3 border d-flex flex-column  align-items-center mt-2 rounded">
-                    <div class="col-10 border text-center">ID</div>
-                    <div class="col-10 border text-center mt-2">ФИО</div>
-                    <div class="col-10 border text-center mt-2">20.02.20</div>
-                    <div class="col-12  text-right mt-2">
-                        <button class = "btn border btn-outline-dark btn-sm">Подробнее</button>
-                    </div>
-                </div>
-
+            <div class="row students">
             </div>
             <div class="row">
 
@@ -107,9 +67,75 @@
         </main>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                        <div class="student-info">
+                            <div class="student-info-data-wrapper it-school">
+                                <span class="student-info-data">IT школа:</span>
+                                <span class="student-info-value"></span>
+                            </div>
+                            <div class="student-info-data-wrapper id">
+                                <span class="student-info-data">ID:</span>
+                                <span class="student-info-value"></span>
+                            </div>
+                            <div class="student-info-data-wrapper phone">
+                                <span class="student-info-data">Телефон:</span>
+                                <span class="student-info-value"></span>
+                            </div>
+                            <div class="student-info-data-wrapper email">
+                                <span class="student-info-data">E-mail:</span>
+                                <span class="student-info-value"></span>
+                            </div>
+                            <div class="links">
+                                <h4 class="links-title">Ссылки студента</h4>
+                                <div class="student-info-data-wrapper email">
+                                    <span class="student-info-data">CV:</span>
+                                    <a class="link cv"></a>
+                                </div>
+                                <div class="student-info-data-wrapper email">
+                                    <span class="student-info-data">Сертификат:</span>
+                                    <a class="link sertificate"></a>
+                                </div>
+                            </div>
+                        </div>
+                            <table class="table">
+                                <thead class="table-head">
+                                    <tr class="table-row">
+                                        <td class="table-data">Общий</td>
+                                        <td class="table-data">комп 1</td>
+                                        <td class="table-data">комп 2</td>
+                                        <td class="table-data">комп 3</td>
+                                        <td class="table-data">комп 4</td>
+                                        <td class="table-data">комп 5</td>
+                                        <td class="table-data">комп 6</td>
+                                        <td class="table-data">Дата сдачи</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                </tbody>
+                            </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button button--remove" data-dismiss="modal">Удалить</button>
+                <button type="button" class="button button--replace" data-dismiss="modal">Переместить</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="../../../scripts/index.js"></script>
+<script src="index.js"></script>
 </body>
 
 </html>

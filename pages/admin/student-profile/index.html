@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../css/index.css">
 </head>
 
 <body>
+<header class="header">
+    <h2 class="header__logo">HSE.Project</h2>
+</header>
+<input type="checkbox" id="menu-toggle"/>
+<label id="trigger" for="menu-toggle"></label>
+<label id="burger" for="menu-toggle"></label>
+<ul id="menu">
+    <li><a href="../recruiter-list/index.html">Все рекрутеры</a></li>
+    <li><a href="../students-list/index.html">Список студентов</a></li>
+    <li><a href="#">Баланс</a></li>
+</ul>
+
 <div class="container">
     <div class="row">
-        <aside class="col-xl-4 border mainaside">
-            <div class="m-3">
-                <a href="?admin=1" class="elem button btn btn-outline-secondary col-12 mt-3  <?php echo $admins[1];?>">HR</a>
-                <a href="?admin=2" class="elem button btn btn-outline-secondary col-12 mt-3  <?php echo $admins[2];?>">Студенты</a>
-                <a href="?admin=3" class="elem button btn btn-outline-secondary col-12 mt-3  <?php echo $admins[3];?>">Баланс</a>
-            </div>
-        </aside>
-        <main class="col-xl-8 ">
+        <main class="col-xl-12">
             <div class="row">
                 <div class="col-6 text-center"><img src="../../../img/man.png" alt="" class="photo rounded-circle border w-50"></div>
                 <div class = "col-6">

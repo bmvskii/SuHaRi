@@ -5,84 +5,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../css/index.css">
 </head>
-<?php
-    if (isset($_GET['type'])) $type = $_GET['type'];
-    else $type = 0;
-    $typeNames[1] = "QA";
-    $typeNames[2] = "JS";
-    $typeNames[3] = "Java";
-    $typeNames[4] = "Python";
-?>
 
 <body>
+<header class="header">
+    <h2 class="header__logo">HSE.Project</h2>
+</header>
+<input type="checkbox" id="menu-toggle"/>
+<label id="trigger" for="menu-toggle"></label>
+<label id="burger" for="menu-toggle"></label>
+<ul id="menu">
+    <li><a href="../students-list/index.html">Мои студенты</a></li>
+    <li><a href="../students-search/index.html">Таблица со студентами</a></li>
+</ul>
 <div class="container">
     <div class="row">
-        <?php include "elements/aside.php" ?>
-        <main class="col-xl-8 ">
-            <?php include "elements/stat.php"?>
-            <div class="row">
-                <h1 class="text-center col-3"><?php echo $typeNames[$type]; ?></h1>
-                <input type="text" placeholder = "фильтр" class="form-control mt-3 col-9">
-            </div>
-
-            <table class = "table table-bordered table-hover rounded text-center">
-                <tr>
-                    <th>ID</th>
-                    <th>Общий</th>
-                    <th>комп 1</th>
-                    <th>комп 2</th>
-                    <th>комп 3</th>
-                    <th>комп 4</th>
-                    <th>Дата сдачи</th>
+        <aside class="col-xl-2 aside">
+            <h2 class="title">Techs</h2>
+            <ul class="aside-list">
+                <li class="aside-list-item">
+                    <button class="button button--qa">QA</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--js">JavaScript</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--python">Python</button>
+                </li>
+                <li class="aside-list-item">
+                    <button class="button button--java">Java</button>
+                </li>
+            </ul>
+        </aside>
+        <div class="col-1"></div>
+        <main class="col-xl-9 main">
+            <h1 class="title">Результаты студентов</h1>
+            <table class="table">
+                <thead class="table-head">
+                <tr class="table-row">
+                    <th class="table-data">ID</th>
+                    <th class="table-data">Общий</th>
+                    <th class="table-data">комп 1</th>
+                    <th class="table-data">комп 2</th>
+                    <th class="table-data">комп 3</th>
+                    <th class="table-data">комп 4</th>
+                    <th class="table-data">комп 5</th>
+                    <th class="table-data">комп 6</th>
+                    <th class="table-data">комп 7</th>
+                    <th class="table-data">Дата сдачи</th>
                 </tr>
-                <tr>
-                    <td><a href = "">ID</a></td>
-                    <td>70</td>
-                    <td>50</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>28.02.20</td>
-                </tr>
-                <tr>
-                    <td><a href = "">ID</a></td>
-                    <td>70</td>
-                    <td>50</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>28.02.20</td>
-                </tr>
-                <tr>
-                    <td><a href = "">ID</a></td>
-                    <td>70</td>
-                    <td>50</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>28.02.20</td>
-                </tr>
-                <tr>
-                    <td><a href = "">ID</a></td>
-                    <td>70</td>
-                    <td>50</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>28.02.20</td>
-                </tr>
+                </thead>
+                <tbody class="table-body"></tbody>
             </table>
-
-
         </main>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="student-info">
+                    <div class="student-info-data-wrapper it-school">
+                        <span class="student-info-data">IT школа:</span>
+                        <span class="student-info-value"></span>
+                    </div>
+                    <div class="student-info-data-wrapper id">
+                        <span class="student-info-data">ID:</span>
+                        <span class="student-info-value"></span>
+                    </div>
+                    <div class="student-info-data-wrapper phone">
+                        <span class="student-info-data">Телефон:</span>
+                        <span class="student-info-value"></span>
+                    </div>
+                    <div class="student-info-data-wrapper email">
+                        <span class="student-info-data">E-mail:</span>
+                        <span class="student-info-value"></span>
+                    </div>
+                    <div class="links">
+                        <h4 class="links-title">Ссылки студента</h4>
+                        <div class="student-info-data-wrapper email">
+                            <span class="student-info-data">CV:</span>
+                            <a class="link cv"></a>
+                        </div>
+                        <div class="student-info-data-wrapper email">
+                            <span class="student-info-data">Сертификат:</span>
+                            <a class="link sertificate"></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead class="table-head">
+                    <tr class="table-row">
+                        <td class="table-data">Общий</td>
+                        <td class="table-data">комп 1</td>
+                        <td class="table-data">комп 2</td>
+                        <td class="table-data">комп 3</td>
+                        <td class="table-data">комп 4</td>
+                        <td class="table-data">комп 5</td>
+                        <td class="table-data">комп 6</td>
+                        <td class="table-data">Дата сдачи</td>
+                    </tr>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button button--remove" data-dismiss="modal">Удалить</button>
+                <button type="button" class="button button--replace" data-dismiss="modal">Переместить</button>
+            </div>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="../../../scripts/index.js"></script>
+<script src="index.js"></script>
 </body>
 
 </html>
