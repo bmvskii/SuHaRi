@@ -7,13 +7,14 @@
 - Добавляем script перед закрытием тега body
 - В js файле обрабатываем событие DOMContentLoaded, а после пишем логику
 
-
 Список эндпоинтов:
 
 - GET http://goiteens.club/hse/back/hrs.php - получение всех HR
 - GET http://goiteens.club/hse/back/hrs.php?id=:id - получение HR по :id
 - GET http://goiteens.club/hse/back/students.php - получние всех студентов
 - GET http://goiteens.club/hse/back/students.php?id=:id - получние студента по :id
+- GET http://goiteens.club/hse/back/login.php?email=:email&password=:password - вход в систему с помощью :email, :password, 
+- GET http://goiteens.club/hse/back/uploadReg.php?name=name&company=company&tel=:tel&email=:email&password=:pwd - регистрация по телефону, email , пароль
 
 Список часто используемых событий:
 - click
