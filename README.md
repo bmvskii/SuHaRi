@@ -25,3 +25,13 @@
 
 - Пример: https://github.com/bmvskii/goit-frontend-js/blob/master/module-10/lesson/theory.js
 - Больше информации: http://fecore.net.ua/books/m5ph3r-javascript/module-11/promise-api.html
+
+TODO:
+- Страница с балансом
+- Пополнение счета
+- Авторизация/регистрация
+- Подвязка всего вместе
+- Перевод студентов из категории в категорию
+- Обработку ситуаций , когда данных нет
+- Валидация форм
+- Вывод модальный окон
